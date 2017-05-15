@@ -66,6 +66,13 @@ Have fun :)
         // (sentenceLength - len) % num of words
     // add \n, append to growing string.
     //else (this is the last line) newArr.join(' '); add to string
+
+
+// I was getting an error for one test: repeat invalid count, even though it worked fine for 60 tests.  So I replaced 
+
+// ' '.repeat(spacesPerWord) with a for loop.
+// Now it times out.
+
 var justify = function(str, len) {
 var arr = str.split(' ');
 var line = [];
