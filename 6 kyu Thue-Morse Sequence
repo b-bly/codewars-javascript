@@ -1,0 +1,25 @@
+/* 
+Given a positive integer n, return first n dgits of Thue-Morse sequence, as a string (see examples).
+
+Ex.:
+
+thueMorse(1); //'0'
+thueMorse(2); //'01'
+thueMorse(5); //'01101'
+thueMorse(10): //'0110100110'
+You don't need to test if n is valid - it will always be a positive integer.
+n will be between 1 and 10000
+Thue-Morse on Wikipedia
+*/
+
+function thueMorse(n){
+  var sequence = [0];
+  var previousSequenceLen = sequence.length;
+  while (sequence.length < n) {
+      previousSequenceLen = sequence.length;
+      for (var i = 0; i < previousSequenceLen; i++) {
+          sequence.push(sequence[i] === 0 ? 1 : 0);
+      }
+  }
+  return sequence.slice(0,n).join('');
+}
