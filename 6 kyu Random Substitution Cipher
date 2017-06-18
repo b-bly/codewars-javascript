@@ -1,0 +1,15 @@
+//https://www.codewars.com/kata/5943bf2895d5f74cfb000032/solutions/javascript
+
+function randomSub() {
+    var cipher = {}, rand, alphabet, index;
+    alphabet = Array.apply(null, Array(26)).map(function(el, i){
+        return String.fromCharCode(i+97);
+    });
+    for (var i = 97; i <= 122; i++) {
+      index = Math.floor(Math.random() * alphabet.length);
+      rand = alphabet[index];
+      alphabet.splice(index, 1);      
+      cipher[String.fromCharCode(i)] = rand;
+    }
+    return cipher;
+}
